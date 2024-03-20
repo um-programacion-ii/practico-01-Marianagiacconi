@@ -7,8 +7,6 @@
             this.nombre= nombre;
 
         }
-
-
         public void mostrarDatos() {
             System.out.println("Cantidad: " + cantidad);
             System.out.println("Nombre: " + nombre);
@@ -29,6 +27,15 @@
         public String getNombre() {
             return nombre;
         }
+        public void sacar(int indice, int cantidad){
+            if (cantidad <= this.cantidad) {
+                this.cantidad -= cantidad;
+                System.out.println("Se sacaron " + cantidad + " unidades de " + this.nombre);
+            } else {
+                System.out.println("No hay suficiente cantidad de " + this.nombre + " en la despensa.");
+            }
+        }
+
         // Sobrecarga del método toString()
         @Override
         public String toString() {
