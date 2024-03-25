@@ -1,50 +1,75 @@
-class Main{
-    public static void main(String[] args){
+class Main {
+    public static void main(String[] args) {
         // Crear instancias de Ingrediente
-        Ingrediente ingrediente1 = new Ingrediente(250, "Harina");
-        Ingrediente ingrediente2 = new Ingrediente(500,"Azúcar");
-        Ingrediente ingrediente3 = new Ingrediente(10, "Levadura");
-        Ingrediente ingrediente4 = new Ingrediente(300, "Tomate");
-        Ingrediente ingrediente5 = new Ingrediente(500,"Carne");
-        Ingrediente ingrediente6 = new Ingrediente(10, "Lechuga");
+        Ingrediente harina = new Ingrediente(250, "Harina");
+        Ingrediente azucar = new Ingrediente(500, "Azúcar");
+        Ingrediente levadura = new Ingrediente(10, "Levadura");
+        Ingrediente tomate = new Ingrediente(300, "Tomate");
+        Ingrediente agua = new Ingrediente(500, "Agua");
+        Ingrediente albahaca = new Ingrediente(10, "Albahaca");
+        Ingrediente mozzarella = new Ingrediente(200, "Mozzarella");
+        Ingrediente huevo = new Ingrediente(2, "Huevo");
+        Ingrediente aceiteOliva = new Ingrediente(30, "Aceite de oliva");
 
         // Mostrar los ingredientes por pantalla
         System.out.println("Ingredientes:");
-        System.out.println(ingrediente1);
-        System.out.println(ingrediente2);
-        System.out.println(ingrediente3);
-        System.out.println(ingrediente4);
-        System.out.println(ingrediente5);
-        System.out.println(ingrediente6);
+        System.out.println(harina);
+        System.out.println(azucar);
+        System.out.println(levadura);
+        System.out.println(tomate);
+        System.out.println(agua);
+        System.out.println(albahaca);
+        System.out.println(mozzarella);
+        System.out.println(huevo);
+        System.out.println(aceiteOliva);
 
         // Crear despensa
-        Despensa despensa = new Despensa(3);
-
-        // Crear ingredientes
-        Ingrediente harina = new Ingrediente(2000,"Harina");
-        Ingrediente azucar = new Ingrediente(40,"Azúcar");
-        Ingrediente sal = new Ingrediente(100,"Sal");
-        Ingrediente levadura = new Ingrediente(10, "Levadura");
-        Ingrediente tomate = new Ingrediente(300, "Tomate");
-        Ingrediente carne = new Ingrediente(500,"Carne");
-        Ingrediente lechuga = new Ingrediente(10, "Lechuga");
+        Despensa despensa = new Despensa(9);
 
         // Agregar ingredientes a la despensa
         despensa.addIngrediente(harina, 0);
         despensa.addIngrediente(azucar, 1);
-        despensa.addIngrediente(sal, 2);
-        despensa.addIngrediente(levadura, 1);
-        despensa.addIngrediente(tomate, 2);
-        despensa.addIngrediente(carne, 1);
-        despensa.addIngrediente(lechuga, 2);
+        despensa.addIngrediente(levadura, 2);
+        despensa.addIngrediente(tomate, 3);
+        despensa.addIngrediente(agua, 4);
+        despensa.addIngrediente(albahaca, 5);
+        despensa.addIngrediente(mozzarella, 6);
+        despensa.addIngrediente(huevo, 7);
+        despensa.addIngrediente(aceiteOliva, 8);
 
         // Sacar ingredientes de la despensa
-        despensa.getIngrediente(0, 500);
-        despensa.getIngrediente(1, 600); // No hay suficiente cantidad de azúcar
-        despensa.getIngrediente(2, 150);
+        despensa.getIngrediente(0, 200);
+        despensa.getIngrediente(1, 100); // No hay suficiente cantidad de azúcar
+        despensa.getIngrediente(2, 5);
 
+        // Crear las recetas
+        HuevoDuro huevoDuro = new HuevoDuro();
+        MasaPizza masaDePizza = new MasaPizza();
+        PizzaMargarita pizzaMargarita = new PizzaMargarita();
+
+        // Mostrar las recetas por pantalla
+        System.out.println("\nReceta de Huevo Duro:");
+        System.out.println("Tiempo de Cocción: " + huevoDuro.getTiempoCoccion() + " minutos");
+        System.out.println("Ingredientes:");
+        for (Ingrediente ingrediente : huevoDuro.getIngredientes()) {
+            System.out.println(ingrediente);
         }
+        System.out.println("Preparación: " + huevoDuro.getPreparacion());
+
+        System.out.println("\nReceta de Masa de Pizza:");
+        System.out.println("Tiempo de Cocción: " + masaDePizza.getTiempoCoccion() + " minutos");
+        System.out.println("Ingredientes:");
+        for (Ingrediente ingrediente : masaDePizza.getIngredientes()) {
+            System.out.println(ingrediente);
+        }
+        System.out.println("Preparación: " + masaDePizza.getPreparacion());
+
+        System.out.println("\nReceta de Pizza Margarita:");
+        System.out.println("Tiempo de Cocción: " + pizzaMargarita.getTiempoCoccion() + " minutos");
+        System.out.println("Ingredientes:");
+        for (Ingrediente ingrediente : pizzaMargarita.getIngredientes()) {
+            System.out.println(ingrediente);
+        }
+        System.out.println("Preparación: " + pizzaMargarita.getPreparacion());
     }
-
-
-
+}
