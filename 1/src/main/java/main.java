@@ -38,9 +38,9 @@ class Main {
         despensa.addIngrediente(aceiteOliva, 8);
 
         // Sacar ingredientes de la despensa
-        despensa.getIngrediente(0, 200);
-        despensa.getIngrediente(1, 100); // No hay suficiente cantidad de azúcar
-        despensa.getIngrediente(2, 5);
+        despensa.getIngrediente("azucar");
+        despensa.getIngrediente("agua"); // No hay suficiente cantidad de azúcar
+        despensa.getIngrediente("mozzarella");
 
         // Crear las recetas
         HuevoDuro huevoDuro = new HuevoDuro();

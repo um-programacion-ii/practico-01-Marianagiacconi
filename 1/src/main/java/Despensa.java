@@ -1,9 +1,12 @@
-public class Despensa {
+import java.util.List;
+import java.util.ArrayList;
+class Despensa {
     private Ingrediente[] ingredientes;
 
     public Despensa(int cantidad) {
         ingredientes = new Ingrediente[cantidad];
-        }
+    }
+
     public void addIngrediente(Ingrediente ingrediente, int indice) {
         if (indice < ingredientes.length) {
             ingredientes[indice] = ingrediente;
@@ -11,13 +14,16 @@ public class Despensa {
             System.out.println("Índice fuera de rango.");
         }
     }
-    public void getIngrediente(int indice, int cantidad){
-        if (indice < ingredientes.length && ingredientes[indice] != null) {
-            ingredientes[indice].sacar(indice, cantidad);
-        } else {
-            System.out.println("Ingrediente no encontrado en la despensa.");
-        }
-        System.out.println("Estado de la despensa:");
 
+    public Ingrediente[] getIngrediente(String nombre) {
+        List<Ingrediente> ingredientesEncontrados = new ArrayList<>();
+        for (Ingrediente ingrediente : ingredientes) {
+            if (ingrediente != null && ingrediente.getNombre().equals(nombre)) {
+                ingredientesEncontrados.add(ingrediente);
+            }
+        }
+        return ingredientesEncontrados.toArray(new Ingrediente[ingredientesEncontrados.size()]);
     }
+
+
 }
